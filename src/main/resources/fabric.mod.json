@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "oneblock",
+	"version": "${version}",
+	"name": "oneblock",
+	"description": "One block mod for minecraft!",
+	"authors": [
+		"2Lynk!"
+	],
+	"contact": {
+		"homepage": "https://2lynk.dev/OneBlock",
+		"sources": "https://modrinth.com/mod/theoneblock"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/oneblock/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"lynk.oneblock.Oneblock"
+		],
+		"fabric-datagen": [
+			"lynk.oneblock.OneblockDataGenerator"
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.15.3",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
