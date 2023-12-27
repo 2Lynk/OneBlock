@@ -60,3 +60,7 @@ More examples of rare drops, corresponding to the new levels:
 - **Server.properties**: Make sure to set `generate-structures=false`. This is for the best experience, if you want to have structures spawn, leave it on `generate-structures=true`
 
 **One Block** offers a unique, fully customizable Minecraft experience. Configure the game to your liking and enjoy endless possibilities!
+
+
+### Download:
+Download from [Modrinth.com/mod/theoneblock](https://modrinth.com/mod/theoneblock)
