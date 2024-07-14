@@ -35,16 +35,11 @@ More examples of rare drops, corresponding to the new levels:
 37. **Dinosaur Fossils**: Dino Egg Fragment, Preserved DNA, Amber Resin, Volcanic Glass
 38. **Alien Landscape**: Meteor Shard, Exotic Spore, Cosmic Crystal, Anti-Gravity Pebble
 
-### Full List of Defaults:
-- The full and sorted list of default levels and rare drops is available at [oneblock.2lynk.dev/generator](https://oneblock.2lynk.dev/generator).
-
 ### Customization and Configurability:
 - **Custom Levels and Drops**: Tailor levels and drops according to your preferences.
 - **Adjustable Level Progression**: Modify how quickly or slowly players progress through levels.
 - **Flexible Drop Mechanics**: Configure the probability and types of rare drops.
 
-### Showcase Version:
-- Experience **One Block** live at `oneblock.2lynk.dev`. Check out a fully functioning showcase version of the mod in Minecraft 1.20.4.
 
 ### Default Settings:
 - **Level Multiplier**: `2`
@@ -56,7 +51,6 @@ More examples of rare drops, corresponding to the new levels:
 
 ### Configuration:
 - **Config File**: Located in `minecraft/config/oneblock`, named `OneBlock.json`.
-- **Custom Configuration Generator**: Available at [2lynk.dev](https://oneblock.2lynk.dev/generator).
 - **Server.properties**: Make sure to set `generate-structures=false`. This is for the best experience, if you want to have structures spawn, leave it on `generate-structures=true`
 
 **One Block** offers a unique, fully customizable Minecraft experience. Configure the game to your liking and enjoy endless possibilities!
