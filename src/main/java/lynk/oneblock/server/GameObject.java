@@ -154,8 +154,6 @@ public class GameObject {
     public static boolean randomRareDropMode = false;
     public static boolean allowBlocksJustAboveOneBlock = false;
 
-    public static boolean emptyNether = true;
-
     // Nested class to mirror the static fields for serialization
     private static class GameObjectState {
         int breaks;
@@ -178,8 +176,6 @@ public class GameObject {
         boolean randomRareDropMode;
         boolean allowBlocksJustAboveOneBlock;
 
-        boolean emptyNether;
-
         GameObjectState() {
             this.breaks = GameObject.breaks;
             this.breaksThislevel = GameObject.breaksThisLevel;
@@ -198,7 +194,6 @@ public class GameObject {
             this.randomBlockMode = GameObject.randomBlockMode;
             this.randomRareDropMode = GameObject.randomRareDropMode;
             this.allowBlocksJustAboveOneBlock = GameObject.allowBlocksJustAboveOneBlock;
-            this.emptyNether = GameObject.emptyNether;
         }
     }
 
@@ -299,9 +294,6 @@ public class GameObject {
             }
             if (jsonObject.has("allowBlocksJustAboveOneBlock")) {
                 GameObject.allowBlocksJustAboveOneBlock = gson.fromJson(jsonObject.get("allowBlocksJustAboveOneBlock"), Boolean.TYPE);
-            }
-            if (jsonObject.has("emptyNether")) {
-                GameObject.emptyNether = gson.fromJson(jsonObject.get("emptyNether"), Boolean.TYPE);
             }
         } catch (Exception e) {
             e.printStackTrace();
