@@ -1,3 +1,5 @@
+https://modrinth.com/mod/theoneblock
+
 # 🧱 OneBlock — Player Guide (What happens & exact chances)
 
 Welcome to **OneBlock**: you start on a tiny island in the void with a single block that keeps coming back. Every time you break it, something can happen — a new block appears, a mob wave might be scheduled, and (if enabled by the pack) you may get random item drops.
