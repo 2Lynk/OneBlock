@@ -1,164 +1,165 @@
-https://modrinth.com/mod/theoneblock
+# 🧱 OneBlock — Player Guide (Event Rules & Exact Chances)
 
-# 🧱 OneBlock — Player Guide (What happens & exact chances)
-
-Welcome to **OneBlock**: you start on a tiny island in the void with a single block that keeps coming back. Every time you break it, something can happen — a new block appears, a mob wave might be scheduled, and (if enabled by the pack) you may get random item drops.
-
-This page explains **everything that can happen** and the **exact chances / rules** that are defined in the current build.
+Welcome to **OneBlock**: your endless regenerating island in the void.  
+Each block break has a chance to cause something special — whether it's a new block, a monster attack, or a friendly visit.  
+This guide explains exactly what can happen, when, and how the **difficulty setting** changes your odds.
 
 ---
 
 ## 🏝️ Your Start
 
-- A **small circular island** (radius **5**), **2 blocks thick**:
-  - Y=62 (bottom), Y=63 (top surface), your OneBlock sits at **Y=64**.
-- The island & OneBlock **match the dimension**:
-  - **Overworld**: grass (top), dirt (under); OneBlock is **grass block**.
-  - **Nether**: **netherrack** (both layers & OneBlock).
-  - **The End**: **end stone** (both layers & OneBlock).
-- Your **spawn point** is set just **above** the OneBlock.
-
-> Tip: Terrain is otherwise **void**; only this island appears (structures can be globally enabled/disabled).
-
----
-
-## 🔁 What happens on each break?
-
-Each time you break the OneBlock:
-
-1) **A new block appears** (the default outcome).
-   - The block is chosen **fairly** from safe, full-cube blocks.
-   - As you progress, **harder blocks** become available more often (see “Block progression”).
-
-2) **A mob wave may be scheduled** (**1% chance per break**, but only if no wave is already scheduled).
-   - If scheduled, the game starts a **countdown** in “breaks remaining”.
-   - When the countdown hits **0**, a wave **spawns instantly** (see “Mob waves” below).
-
-3) **(If enabled) a random item may drop** on/near the OneBlock.
-   - Items come from a **safe list** (see “Random items”).
-   - **End Portal Frames are never dropped** by this system.
-
-> The only **hard-coded** chance in this build is the **1-in-100 (1%)** chance to **schedule** a mob wave on a break when no wave is currently pending.
+- You begin on a **small circular island** about **5 blocks in radius**, **2 blocks thick**:  
+  Bottom at **Y=62**, top at **Y=63**, and your OneBlock at **Y=64**.  
+- Island material matches the dimension:  
+  - **Overworld:** Grass and dirt layers.  
+  - **Nether:** Netherrack.  
+  - **The End:** End Stone.  
+- You always spawn safely above your OneBlock.  
+- Everything else is **void** — this is your whole world.
 
 ---
 
-## ⚔️ Mob waves (chances, size, countdown, and mob mix)
+## 🔁 What Happens on Each Break
 
-### Scheduling chance
-- **Per break:** **1%** chance to **schedule** a wave **if no wave is already scheduled**.
+Every time you break the OneBlock, one of several things may happen:
 
-### Countdown (how many more breaks until it spawns)
-| Your total OneBlock breaks | Breaks till the wave spawns |
-|---:|---:|
-| 0–499 | **12** |
-| 500–1499 | **10** |
-| 1500–2999 | **8** |
-| 3000–4999 | **6** |
-| 5000–7999 | **5** |
-| 8000–11999 | **4** |
-| 12000+ | **3** |
+| Event | Description | Base Chance | Easy | Normal | Hard | Peaceful |
+|:------|:-------------|:------------|:------|:--------|:-------|:----------|
+| 🧱 **Block Regeneration** | A new random block appears from the progression pool. | Always | — | — | — | ✅ Always |
+| 💀 **Monster Attack** | Instantly spawns a wave of enemies around your OneBlock. | 1 in 100 | 1 in 200 (half as likely) | 1 in 100 | 1 in 50 (twice as likely) | ❌ Disabled |
+| 🐑 **Friendly Visit** | Spawns peaceful or neutral mobs — animals, villagers, traders. | 1 in 120 | 1 in 60 (twice as likely) | 1 in 120 | 1 in 240 (half as likely) | ✅ Allowed |
+| 🪙 **Random Item Drop** | Drops a random safe item on or near your OneBlock. | 1 in 100 | 1 in 50 (twice as likely) | 1 in 100 | 1 in 200 (half as likely) | ✅ Allowed |
 
-> You’ll see a chat message like:  
-> **“⚠ Monsters will appear after X more block breaks…”**  
-> When the countdown reaches 0:  
-> **“A wave of N enemies has appeared!”**
-
-### Wave size (how many mobs)
-- **0–99 breaks:** always **1** mob.  
-- **100+ breaks:** the size is **uniform random** from **1** up to **(floor(breaks / 100) + 1)**, capped at **100**.
-  - Examples:
-    - 150 breaks → **1–2** mobs
-    - 250 breaks → **1–3** mobs
-    - 900 breaks → **1–10** mobs
-    - 5,000+ breaks → scales up but never exceeds **100**
-
-### What can spawn (and how the odds shift)
-The wave chooses each mob **uniformly from a “pool”** that grows with progress.  
-Some entries are **duplicated** later to **increase their odds**.
-
-| Total breaks | Mob pool (entries) |
-|---:|---|
-| 0–499 | Zombie, Spider |
-| 500–1499 | Zombie, Spider, Skeleton |
-| 1500–2999 | + Creeper, Husk, Stray |
-| 3000–4999 | + Enderman |
-| 5000–7999 | + **Creeper again** (Creeper appears **twice** → higher chance) |
-| 8000+ | + **Enderman again** (Enderman appears **twice** → higher chance) |
-
-> Spawning radius is about **4 blocks** around the OneBlock (tries nearby air spots, falls back to center if needed).
-
-After a wave spawns, the system resets so future breaks can **again** schedule a wave at **1%**.
+> These chances are rolled **independently** on every block break.  
+> It’s possible (though rare) for multiple events to happen on the same break.
 
 ---
 
-## 🧱 Block progression (what blocks you get as you break)
+## ⚔️ Monster Attacks (Waves)
 
-Blocks are chosen from **safe**, **full-cube**, **non-gravity**, **non-technical** blocks — no TNT, no portals, no beds/chests (no block entities), no falling sand/gravel, etc.
+When a monster event succeeds, enemies spawn instantly around your island.  
+The wave strength scales with your **total OneBlock breaks** and **world difficulty**.
 
-Your **total breaks** control how “hard” a block can be:
+### 📈 Wave Scaling
+| Stage | Typical Enemies | Notes |
+|:------|:----------------|:------|
+| Early (0–499) | Zombies, Spiders | Small waves, basic mobs |
+| Mid (500–1499) | Skeletons, Creepers, Husks | Mixed danger |
+| Late (1500–2999) | Strays, Endermen | Stronger enemies, elites |
+| Extreme (3000+) | Larger mixed waves | Frequent elites on Hard |
 
-- We track a **progress** value:  
-  `progress = min(totalBreaks / 10,000, 1.0)`
-- This drives a **hardness cap** that rises smoothly from easy to very hard:  
-  `maxHardness = 0.5 + 49.5 * progress`
+### 💪 Difficulty Effects
+| Difficulty | Behavior |
+|:------------|:----------|
+| **Easy** | Waves are smaller and less frequent. |
+| **Normal** | Standard scaling and balance. |
+| **Hard** | Waves are larger, include elites, and occur more often. |
+| **Peaceful** | Hostile events disabled entirely. |
 
-**Milestones (hardness cap examples):**
-- **0 breaks:** cap ≈ **0.5** → early soft blocks (dirt/log-like hardness)
-- **1,000 breaks:** cap ≈ **5.45**
-- **5,000 breaks:** cap ≈ **25.25**
-- **10,000+ breaks:** cap = **50** → even **obsidian-level** hardness now allowed
-
-**How a block is picked (simplified):**
-1) Try up to **128 times** to find a random block **≤ current hardness cap** (this dominates).
-2) If that fails, try up to **128** more with a **probability gate** that favors harder blocks late-game.
-3) Fallback: pick the **softest** of **64** random samples (guarantees a result).
-
-**Never selected as break-result blocks (examples):**
-- **Bedrock, Barrier, Light**, command/structure/jigsaw blocks  
-- **End Portal**, **Nether Portal**, **End Gateway**, **Ice**, **TNT**  
-- Any **falling** blocks (sand, gravel, concrete powder)  
-- Any blocks with **block entities** (e.g., chests, beacons, spawners)  
-- **Partial shapes** (stairs, fences, walls, torches, carpets, etc.) are excluded by the “full-cube” rule
+### 📍 Spawn Details
+- Mobs spawn in a **4-block radius** around your OneBlock.  
+- Only **safe air positions** are used; no suffocation or block spawns.  
+- Works across **all dimensions** (Overworld, Nether, End).  
+- All spawns are announced globally in multiplayer.
 
 ---
 
-## 🎁 Random items (if enabled by the pack)
+## 🐾 Friendly Visits
 
-When an item drop is chosen, the mod spawns a **random allowed item** on/above the OneBlock:
+Not every surprise is hostile — sometimes the world sends help.
 
-- **Allowed**: most normal items (foods, tools, many block items that are safe).
-- **Never dropped**:
-  - **End Portal Frame**, **Bedrock**, **Barrier**, **Light**, command/structure/jigsaw blocks, **Debug Stick**.
-  - **Dangerous spawn eggs** for **Ender Dragon**, **Wither**, **Warden** are blocked.
-- Some awkward/partial blocks (slabs, stairs, fences, panes, carpets, torches, beds, candles, anvils, etc.) are **excluded** from the item pool to keep things playable on a one-block island.
+When a friendly event triggers, the mod rolls between **land** and **aquatic** pools based on your island setup.
 
-> **Important:** In the current build, the **exact per-break chance** of an item drop is **not fixed here** (it’s decided by the break handler logic). Items, when they do appear, **will never** include End Portal Frames.
+### 🐮 Land Spawns (Default)
+Includes:
+- **Farm animals:** Chicken, Sheep, Cow, Pig, Rabbit, Goat, Horse, Donkey, Mule, Mooshroom  
+- **Neutrals:** Wolf, Llama, Bee, Fox, Camel, Panda, Polar Bear  
+- **Ambients:** Parrot, Cat, Turtle, Armadillo, Sniffer, Allay  
+- **Villager:** Rarely spawns after mid-game progress  
+- **Wandering Trader:** Occasionally appears with two leashed llamas
 
----
+### 🌊 Aquatic Spawns
+If a **5×5 pool of water at least 2 blocks deep** surrounds your OneBlock, the friendly pool switches to aquatic creatures:
+- Cod, Salmon, Tropical Fish, Pufferfish  
+- Axolotl  
+- Squid, Glow Squid  
+- Frog  
+- Dolphin (rare bonus)
 
-## ❌ About End Portal Frames (and other “cheaty” items)
-
-- **End Portal Frames do not drop** from the random items system (they are explicitly blacklisted).
-- **End Portal / End Gateway / Nether Portal blocks** are **never** picked as break results.
-- If you want End Portal Frames to be obtainable, that would need a **separate custom event** not present in this build.
-
----
-
-## 💾 Quality-of-life
-
-- If you **die** without a personal spawn (bed/anchor), you respawn **at the OneBlock**, made safe (no fire, fall reset).
-- Waves and progress are stored so your **run persists** across sessions.
+> The pool must be **completely water-filled** (no air gaps) to qualify as aquatic.
 
 ---
 
-## 📌 TL;DR (chances & rules you can rely on)
+## 🧱 Block Progression
 
-- **Mob wave scheduling:** **1% per break** (only when no wave is pending).  
-- **Wave countdown:** **12 → 10 → 8 → 6 → 5 → 4 → 3** breaks as you pass **0/500/1500/3000/5000/8000/12000** total breaks.  
-- **Wave size:** from **1** up to **(floor(totalBreaks/100) + 1)**; never above **100**.  
-- **Mob mix:** Zombies/Spiders early → add Skeletons → then Creeper/Husk/Stray → then Enderman;  
-  **Creeper** weighted up at **5000+**, **Enderman** weighted up at **8000+**.  
-- **Block results:** smooth difficulty curve; more **hard blocks** unlock as you approach **10,000** breaks.  
-- **Item drops:** allowed & safe items only; **no End Portal Frames**.
+Your total OneBlock breaks determine what blocks can appear.  
+Each tier unlocks harder materials, avoiding unsafe or incomplete blocks.
 
-Good luck — and watch that countdown! 👀
+| Total Breaks | Example Blocks |
+|:--------------|:---------------|
+| 0–500 | Dirt, Wood, Stone, Terracotta |
+| 500–1000 | Adds basic ores and deepslate |
+| 1000–2000 | Adds Basalt, Blackstone, and harder stones |
+| 2000–5000 | Expands to Nether/End blocks |
+| 5000–8000 | Adds rare materials |
+| 8000–10000+ | Unlocks all blocks up to Obsidian hardness |
+
+### 🚫 Excluded Blocks
+Unsafe or unusable blocks are skipped automatically:
+- Bedrock, Barrier, Light, Debug Stick  
+- Portals, TNT, Ice, Command or Structure blocks  
+- Blocks with entities (chests, beacons, spawners)  
+- Falling blocks (sand, gravel, concrete powder)  
+- Non-full shapes (stairs, slabs, fences, torches, etc.)
+
+---
+
+## 🎁 Random Item Drops
+
+If an item drop event succeeds, a random **safe item** spawns above your OneBlock.
+
+- **Allowed:** Common materials, tools, foods, decorative blocks  
+- **Blocked:** Dangerous or game-breaking items  
+  - End Portal Frame, Bedrock, Barrier, Light  
+  - Command / Structure / Jigsaw blocks  
+  - Explosives or boss spawn eggs  
+  - Non-full blocks (stairs, slabs, panes, torches, beds, etc.)
+
+> Item drops are more generous on **Easy**, standard on **Normal**, and rarer on **Hard**.
+
+---
+
+## ❌ Restricted & Blacklisted Items
+
+- **End Portal Frames** never appear in drops or block results.  
+- **Portals** (End, Nether, Gateway) cannot be generated by the OneBlock.  
+- **Boss spawn eggs** and unsafe blocks are filtered out entirely.  
+- **Cheaty items** require datapacks or mod extensions to be introduced manually.
+
+---
+
+## 💾 Persistence & Safety
+
+- If you die without a spawn point, you’ll **respawn safely** above your OneBlock.  
+- All progress — block breaks, events, and state — is **automatically saved** between sessions.  
+- The mod guarantees the OneBlock always regenerates correctly, even after crashes or force stops.
+
+---
+
+## 📊 TL;DR — Chance Summary
+
+| Event | Base Chance | Easy | Normal | Hard | Peaceful |
+|:------|:-------------|:------|:--------|:-------|:-----------|
+| 💀 Hostile Wave | 1 in 100 | 1 in 200 | 1 in 100 | 1 in 50 | ❌ |
+| 🐑 Friendly Visit | 1 in 120 | 1 in 60 | 1 in 120 | 1 in 240 | ✅ |
+| 🪙 Item Drop | 1 in 100 | 1 in 50 | 1 in 100 | 1 in 200 | ✅ |
+| 🧱 Block Regeneration | Always | Always | Always | Always | Always |
+
+- **Easy:** Safer world, more friendly and item events.  
+- **Normal:** Balanced survival experience.  
+- **Hard:** More frequent events, more danger, larger waves.  
+- **Peaceful:** Only friendly and item events can occur.
+
+---
+
+> “It all begins on one small island — what you build from there is entirely up to you.”
