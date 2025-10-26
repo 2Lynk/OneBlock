@@ -77,7 +77,7 @@ The friendly pool includes:
 - **Wandering Trader:** Occasionally appears with two leashed llamas
 
 ### 🌊 Aquatic Spawns
-If you have a **5×5 pool of water that’s two blocks deep** around your OneBlock, friendly events switch to aquatic spawns:
+If you have a **5×5 pool of water** around your OneBlock, friendly events switch to aquatic spawns:
 - Cod, Salmon, Tropical Fish, Pufferfish  
 - Axolotl  
 - Squid, Glow Squid  
