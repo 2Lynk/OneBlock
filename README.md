@@ -27,8 +27,8 @@ Every time you break the OneBlock, one of several things may happen:
 |:------|:-------------|:------------|:------|:--------|:-------|:----------|
 | 🧱 **Block Regeneration** | A new random block appears from the progression pool. | Always | — | — | — | ✅ Always |
 | 💀 **Monster Attack** | Instantly spawns a wave of enemies around your OneBlock. | 1 in 100 | 1 in 200 (half as likely) | 1 in 100 | 1 in 50 (twice as likely) | ❌ Disabled |
-| 🐑 **Friendly Visit** | Spawns peaceful or neutral mobs — animals, villagers, traders. | 1 in 120 | 1 in 60 (twice as likely) | 1 in 120 | 1 in 240 (half as likely) | ✅ Allowed |
-| 🪙 **Random Item Drop** | Drops a random safe item on or near your OneBlock. | 1 in 100 | 1 in 50 (twice as likely) | 1 in 100 | 1 in 200 (half as likely) | ✅ Allowed |
+| 🐑 **Friendly Visit** | Spawns peaceful or neutral mobs — animals, villagers, traders. | 1 in 100 | 1 in 50 (twice as likely) | 1 in 100 | 1 in 200 (half as likely) | ✅ Allowed |
+| 🪙 **Random Item Drop** | Drops a random safe item on or near your OneBlock. | 1 in 100 | 1 in 50 (twice as likely) | 1 in 100 | 1 in 100 (half as likely) | ✅ Allowed |
 
 > These chances are rolled **independently** on every block break.  
 > It’s possible (though rare) for multiple events to happen on the same break.
