@@ -1,111 +1,109 @@
 # 🧱 OneBlock — Player Guide (Event Rules & Exact Chances)
 
 Welcome to **OneBlock**: your endless regenerating island in the void.  
-Each block break has a chance to cause something special — whether it's a new block, a monster attack, or a friendly visit.  
-This guide explains exactly what can happen, when, and how the **difficulty setting** changes your odds.
+Each block break has a chance to cause something special — whether it’s a new block, a monster attack, or a friendly visit.  
+This guide explains exactly what can happen, when, and how the **difficulty setting** influences your odds.
 
 ---
 
 ## 🏝️ Your Start
 
-- You begin on a **small circular island** about **5 blocks in radius**, **2 blocks thick**:  
-  Bottom at **Y=62**, top at **Y=63**, and your OneBlock at **Y=64**.  
-- Island material matches the dimension:  
+- You begin on a **small circular island**, roughly **5 blocks in radius** and **2 blocks thick**:  
+  Bottom layer at **Y=62**, top at **Y=63**, and your OneBlock sits at **Y=64**.  
+- The island’s materials match its dimension:  
   - **Overworld:** Grass and dirt layers.  
   - **Nether:** Netherrack.  
   - **The End:** End Stone.  
 - You always spawn safely above your OneBlock.  
-- Everything else is **void** — this is your whole world.
+- Everything beyond is **void** — this is your whole world.
 
 ---
 
 ## 🔁 What Happens on Each Break
 
-Every time you break the OneBlock, one of several things may happen:
+Each time you break the OneBlock, the game rolls several independent chances to determine what happens.
 
 | Event | Description | Base Chance | Easy | Normal | Hard | Peaceful |
 |:------|:-------------|:------------|:------|:--------|:-------|:----------|
 | 🧱 **Block Regeneration** | A new random block appears from the progression pool. | Always | — | — | — | ✅ Always |
-| 💀 **Monster Attack** | Instantly spawns a wave of enemies around your OneBlock. | 1 in 100 | 1 in 200 (half as likely) | 1 in 100 | 1 in 50 (twice as likely) | ❌ Disabled |
-| 🐑 **Friendly Visit** | Spawns peaceful or neutral mobs — animals, villagers, traders. | 1 in 100 | 1 in 50 (twice as likely) | 1 in 100 | 1 in 200 (half as likely) | ✅ Allowed |
-| 🪙 **Random Item Drop** | Drops a random safe item on or near your OneBlock. | 1 in 100 | 1 in 50 (twice as likely) | 1 in 100 | 1 in 100 (half as likely) | ✅ Allowed |
+| 💀 **Monster Attack** | Spawns an instant wave of enemies around your OneBlock. | 1 in 100 | 1 in 200 *(half as likely)* | 1 in 100 | 1 in **33** *(≈3× more likely)* | ❌ Disabled |
+| 🐑 **Friendly Visit** | Spawns peaceful or neutral mobs — animals, villagers, traders. | 1 in 100 | 1 in 50 *(twice as likely)* | 1 in 100 | 1 in 300 *(three times less likely)* | ✅ Allowed |
+| 🪙 **Random Item Drop** | Drops a random safe item above your OneBlock. | 1 in 100 | 1 in 50 *(twice as likely)* | 1 in 100 | 1 in 300 *(three times less likely)* | ✅ Allowed |
 
-> These chances are rolled **independently** on every block break.  
-> It’s possible (though rare) for multiple events to happen on the same break.
+> These chances are **rolled independently** every time you break the OneBlock.  
+> Multiple outcomes can occur on the same break — though that’s rare!
 
 ---
 
 ## ⚔️ Monster Attacks (Waves)
 
-When a monster event succeeds, enemies spawn instantly around your island.  
-The wave strength scales with your **total OneBlock breaks** and **world difficulty**.
+When a hostile event succeeds, enemies spawn instantly around your island.  
+The number and type of enemies scale with your total OneBlock breaks and difficulty.
 
 ### 📈 Wave Scaling
 | Stage | Typical Enemies | Notes |
 |:------|:----------------|:------|
 | Early (0–499) | Zombies, Spiders | Small waves, basic mobs |
-| Mid (500–1499) | Skeletons, Creepers, Husks | Mixed danger |
+| Mid (500–1499) | Skeletons, Creepers, Husks | Varied midgame fights |
 | Late (1500–2999) | Strays, Endermen | Stronger enemies, elites |
 | Extreme (3000+) | Larger mixed waves | Frequent elites on Hard |
 
 ### 💪 Difficulty Effects
 | Difficulty | Behavior |
 |:------------|:----------|
-| **Easy** | Waves are smaller and less frequent. |
-| **Normal** | Standard scaling and balance. |
-| **Hard** | Waves are larger, include elites, and occur more often. |
-| **Peaceful** | Hostile events disabled entirely. |
+| **Easy** | Smaller, less frequent waves. |
+| **Normal** | Balanced size and rate. |
+| **Hard** | Larger, tougher, and significantly more frequent waves. |
+| **Peaceful** | Hostile waves are disabled entirely. |
 
-### 📍 Spawn Details
-- Mobs spawn in a **4-block radius** around your OneBlock.  
-- Only **safe air positions** are used; no suffocation or block spawns.  
-- Works across **all dimensions** (Overworld, Nether, End).  
-- All spawns are announced globally in multiplayer.
+### 📍 Spawn Behavior
+- Mobs spawn within a **4-block radius** around your OneBlock.  
+- Only valid air positions are used (no suffocation).  
+- Works in **all dimensions** (Overworld, Nether, End).  
+- In multiplayer, wave messages are broadcast to all players.
 
 ---
 
 ## 🐾 Friendly Visits
 
-Not every surprise is hostile — sometimes the world sends help.
-
-When a friendly event triggers, the mod rolls between **land** and **aquatic** pools based on your island setup.
+Sometimes instead of chaos, the OneBlock sends help — or company.
 
 ### 🐮 Land Spawns (Default)
-Includes:
+The friendly pool includes:
 - **Farm animals:** Chicken, Sheep, Cow, Pig, Rabbit, Goat, Horse, Donkey, Mule, Mooshroom  
 - **Neutrals:** Wolf, Llama, Bee, Fox, Camel, Panda, Polar Bear  
 - **Ambients:** Parrot, Cat, Turtle, Armadillo, Sniffer, Allay  
-- **Villager:** Rarely spawns after mid-game progress  
+- **Villager:** Rarely spawns after mid-game  
 - **Wandering Trader:** Occasionally appears with two leashed llamas
 
 ### 🌊 Aquatic Spawns
-If a **5×5 pool of water at least 2 blocks deep** surrounds your OneBlock, the friendly pool switches to aquatic creatures:
+If you have a **5×5 pool of water that’s two blocks deep** around your OneBlock, friendly events switch to aquatic spawns:
 - Cod, Salmon, Tropical Fish, Pufferfish  
 - Axolotl  
 - Squid, Glow Squid  
 - Frog  
-- Dolphin (rare bonus)
+- Dolphin *(rare bonus)*
 
-> The pool must be **completely water-filled** (no air gaps) to qualify as aquatic.
+> The water must fully fill the 5×5 area — both layers need to be water blocks for the pool to count.
 
 ---
 
 ## 🧱 Block Progression
 
-Your total OneBlock breaks determine what blocks can appear.  
-Each tier unlocks harder materials, avoiding unsafe or incomplete blocks.
+The OneBlock evolves as you play.  
+Your total break count determines which blocks can appear, moving from soft materials to rare and hard ones.
 
-| Total Breaks | Example Blocks |
-|:--------------|:---------------|
-| 0–500 | Dirt, Wood, Stone, Terracotta |
-| 500–1000 | Adds basic ores and deepslate |
-| 1000–2000 | Adds Basalt, Blackstone, and harder stones |
-| 2000–5000 | Expands to Nether/End blocks |
-| 5000–8000 | Adds rare materials |
-| 8000–10000+ | Unlocks all blocks up to Obsidian hardness |
+| Total Breaks | Example Materials |
+|:--------------|:----------------|
+| 0–500 | Dirt, Logs, Stone, Terracotta |
+| 500–1000 | Adds ores and deepslate |
+| 1000–2000 | Adds Basalt, Blackstone |
+| 2000–5000 | Expands to Nether & End materials |
+| 5000–8000 | Introduces rare blocks |
+| 8000–10000+ | Includes all blocks up to Obsidian hardness |
 
 ### 🚫 Excluded Blocks
-Unsafe or unusable blocks are skipped automatically:
+Unsafe or unstable blocks never appear:
 - Bedrock, Barrier, Light, Debug Stick  
 - Portals, TNT, Ice, Command or Structure blocks  
 - Blocks with entities (chests, beacons, spawners)  
@@ -116,49 +114,54 @@ Unsafe or unusable blocks are skipped automatically:
 
 ## 🎁 Random Item Drops
 
-If an item drop event succeeds, a random **safe item** spawns above your OneBlock.
+Item events spawn **safe, valid items** directly above your OneBlock.
 
-- **Allowed:** Common materials, tools, foods, decorative blocks  
-- **Blocked:** Dangerous or game-breaking items  
-  - End Portal Frame, Bedrock, Barrier, Light  
-  - Command / Structure / Jigsaw blocks  
-  - Explosives or boss spawn eggs  
-  - Non-full blocks (stairs, slabs, panes, torches, beds, etc.)
+**Allowed:**  
+Tools, food, and most non-hazardous items.  
 
-> Item drops are more generous on **Easy**, standard on **Normal**, and rarer on **Hard**.
+**Blocked:**  
+- End Portal Frame, Bedrock, Barrier, Light  
+- Command / Structure / Jigsaw blocks  
+- Explosives, boss spawn eggs  
+- Non-full blocks (stairs, slabs, torches, panes, beds, etc.)
+
+> Friendly and item events happen **twice as often** on *Easy*,  
+> at the **base rate** on *Normal*,  
+> and are **three times less likely** on *Hard*.
 
 ---
 
 ## ❌ Restricted & Blacklisted Items
 
-- **End Portal Frames** never appear in drops or block results.  
-- **Portals** (End, Nether, Gateway) cannot be generated by the OneBlock.  
-- **Boss spawn eggs** and unsafe blocks are filtered out entirely.  
-- **Cheaty items** require datapacks or mod extensions to be introduced manually.
+- **End Portal Frames** are never dropped or generated.  
+- **Portals** (End, Nether, Gateway) never appear as block results.  
+- **Boss spawn eggs** and unsafe items are permanently filtered out.  
+- “Cheaty” items must be added manually via datapacks or commands.
 
 ---
 
 ## 💾 Persistence & Safety
 
-- If you die without a spawn point, you’ll **respawn safely** above your OneBlock.  
-- All progress — block breaks, events, and state — is **automatically saved** between sessions.  
-- The mod guarantees the OneBlock always regenerates correctly, even after crashes or force stops.
+- If you die without a bed or anchor, you respawn safely above your OneBlock.  
+- World state (break count, waves, events) saves automatically between sessions.  
+- The mod guarantees regeneration even after crashes or forced shutdowns.
 
 ---
 
-## 📊 TL;DR — Chance Summary
+## 📊 TL;DR — Event Chances
 
-| Event | Base Chance | Easy | Normal | Hard | Peaceful |
-|:------|:-------------|:------|:--------|:-------|:-----------|
-| 💀 Hostile Wave | 1 in 100 | 1 in 200 | 1 in 100 | 1 in 50 | ❌ |
-| 🐑 Friendly Visit | 1 in 120 | 1 in 60 | 1 in 120 | 1 in 240 | ✅ |
-| 🪙 Item Drop | 1 in 100 | 1 in 50 | 1 in 100 | 1 in 200 | ✅ |
+| Event | Base | Easy | Normal | Hard | Peaceful |
+|:------|:------|:------|:--------|:-------|:-----------|
+| 💀 Hostile Wave | 1 in 100 | 1 in 200 *(half as likely)* | 1 in 100 | 1 in **33** *(3× more likely)* | ❌ |
+| 🐑 Friendly Visit | 1 in 100 | 1 in 50 *(2× more likely)* | 1 in 100 | 1 in 300 *(3× less likely)* | ✅ |
+| 🪙 Item Drop | 1 in 100 | 1 in 50 *(2× more likely)* | 1 in 100 | 1 in 300 *(3× less likely)* | ✅ |
 | 🧱 Block Regeneration | Always | Always | Always | Always | Always |
 
-- **Easy:** Safer world, more friendly and item events.  
-- **Normal:** Balanced survival experience.  
-- **Hard:** More frequent events, more danger, larger waves.  
-- **Peaceful:** Only friendly and item events can occur.
+**Difficulty summary:**  
+- 🟢 **Easy** – safer, more friendlies and loot.  
+- ⚪ **Normal** – balanced and consistent.  
+- 🔴 **Hard** – more danger, more frequent monster waves.  
+- ⚫ **Peaceful** – only friendly or item events occur.
 
 ---
 
