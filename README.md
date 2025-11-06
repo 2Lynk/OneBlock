@@ -88,7 +88,7 @@ If you have a **5×5 pool of water** around your OneBlock, friendly events switc
 
 ---
 
-## 🧱 Block Progression
+# 🧱 Block Progression
 
 The OneBlock evolves as you play.  
 Your total break count determines which blocks can appear, moving from soft materials to rare and hard ones.
@@ -109,6 +109,76 @@ Unsafe or unstable blocks never appear:
 - Blocks with entities (chests, beacons, spawners)  
 - Falling blocks (sand, gravel, concrete powder)  
 - Non-full shapes (stairs, slabs, fences, torches, etc.)
+
+---
+
+## 🎛 Drop Weighting & the 10k Normalization
+
+The OneBlock generator now uses a **weighted bag** early on to bias which blocks appear, but that weighting **fades out** as you progress toward 10,000 total breaks.
+
+### ⚖️ How It Works
+
+Early on, the game favors **useful** blocks (like wood, wool, planks, and ores) while still including **structural** blocks (stone, dirt, sand, etc.) and a few **rare** ones (diamonds, emeralds, debris).
+
+- Base weight distribution (NORMAL difficulty):  
+  - 🪵 **Useful:** 60%  
+  - 🧱 **Structural:** 35%  
+  - 💎 **Rare:** 5%
+
+- As you break more blocks, the weighting fades:  
+  - Let **progress = totalBreaks / 10,000**  
+  - Let **pWeighted = 1 − progress**  
+  - With probability **pWeighted**, a block is chosen from the weighted bag  
+  - With probability **(1 − pWeighted)**, a block is chosen **uniformly** from all allowed blocks
+
+At **0 breaks**, your drops are **100% weighted** (favoring useful materials).  
+At **10,000 breaks**, the weighting hits **0%**, making your OneBlock **fully random** within the safe pool.
+
+---
+
+### 📊 Weight Fade Example (NORMAL Difficulty)
+
+| Total Breaks | Weighted Portion | Useful | Structural | Rare | Uniform Portion |
+|:-------------:|:----------------:|:-------:|:-----------:|:----:|:----------------:|
+| **0** | 100% | **60%** | **35%** | **5%** | 0% |
+| **2,500** | 75% | **45%** | **26.25%** | **3.75%** | 25% |
+| **5,000** | 50% | **30%** | **17.5%** | **2.5%** | 50% |
+| **7,500** | 25% | **15%** | **8.75%** | **1.25%** | 75% |
+| **10,000+** | 0% | **0%** | **0%** | **0%** | **100% Random** |
+
+> 🧠 In plain terms: early game gives you plenty of useful stuff — wood, ores, wool.  
+> Mid game blends structure and randomness.  
+> End game? Anything can appear — total chaos and creativity.
+
+---
+
+### ⚔️ Difficulty Modifiers
+
+Each difficulty level slightly changes the ratios *within* the weighted bag:
+
+| Difficulty | Useful Bias | Structural Bias | Rare Bias | Result |
+|-------------|--------------|-----------------|------------|---------|
+| **Peaceful** | +30% | −10% | −20% | Easier access to building blocks |
+| **Easy** | +20% | ±0% | −10% | Gentle progression |
+| **Normal** | Baseline | Baseline | Baseline | Standard balance |
+| **Hard** | −20% | +10% | +10% | More stone/rare blocks early |
+
+These adjustments only apply while **pWeighted > 0** — after 10k breaks, all blocks are equally likely regardless of difficulty.
+
+---
+
+### 🧩 Why This Change
+
+This new scaling system smooths out progression and ensures the OneBlock never feels stale:
+
+- Early game: consistent access to core materials  
+- Mid game: growing diversity and unpredictability  
+- Late game: completely freeform, with every block equally possible  
+
+By 10,000 breaks, you’ve effectively reached **complete block freedom** — the OneBlock becomes a true mirror of Minecraft’s full creativity.
+
+---
+
 
 ---
 
