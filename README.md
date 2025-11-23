@@ -190,7 +190,6 @@ Item events spawn **safe, valid items** directly above your OneBlock.
 Tools, food, and most non-hazardous items.  
 
 **Blocked:**  
-- End Portal Frame, Bedrock, Barrier, Light  
 - Command / Structure / Jigsaw blocks  
 - Explosives, boss spawn eggs  
 - Non-full blocks (stairs, slabs, torches, panes, beds, etc.)
@@ -198,13 +197,15 @@ Tools, food, and most non-hazardous items.
 > Friendly and item events happen **twice as often** on *Easy*,  
 > at the **base rate** on *Normal*,  
 > and are **three times less likely** on *Hard*.
+>
+> After 10k breaks End Portal Frames will be added to the rare item drop pool.
 
 ---
 
 ## ❌ Restricted & Blacklisted Items
 
-- **End Portal Frames** are never dropped or generated.  
-- **Portals** (End, Nether, Gateway) never appear as block results.  
+- **End Portal Frames** are never generated.  
+- **Portals** (End, Nether, Gateway) never appear as block results. 
 - **Boss spawn eggs** and unsafe items are permanently filtered out.  
 - “Cheaty” items must be added manually via datapacks or commands.
 
